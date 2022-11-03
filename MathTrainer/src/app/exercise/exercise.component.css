@@ -1,0 +1,13 @@
+
+.right-result
+{
+  background-color: green;
+}
+.wrong-result{
+  background-color: red;
+}
+
+td{
+  padding-bottom: 15px;
+}
+

@@ -1,0 +1,21 @@
+
+<table>
+    <tr *ngFor="let question of app.getQuestions(); let rowIx = index">
+        <td>{{question}} = </td>
+        <td>
+          <label>
+            <input type="number" name="result" id="result" [(ngModel)] = app.userResults[rowIx]>
+          </label>
+        </td>
+        <td [hidden]="!app.resultsShow" [class]="app.getStyle(rowIx)">
+          <!-- class = getClass(rowIx) -->
+          {{app.results[rowIx]}}
+        </td>
+
+
+    </tr>
+</table>
+<div>
+  <button [hidden]="app.resultsShow" (click)="app.showResults()">Check Results</button>
+</div>
+

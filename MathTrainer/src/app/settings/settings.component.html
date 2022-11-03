@@ -1,0 +1,30 @@
+<form #settingsForm="ngForm">
+  <div>
+    <label> <b>Operators:</b>
+      +<input type="checkbox" id="plus" name="plus" [(ngModel)]="app.plus">
+      -<input type="checkbox" id="minus" name="minus" [(ngModel)]="app.minus">
+      /<input type="checkbox" id="divide" name="divide" [(ngModel)]="app.divide">
+      *<input type="checkbox" id="multiply" name="multiply" [(ngModel)]="app.multiply">
+    </label>
+  </div>
+
+  <div>
+    <label><b>Digits:</b>
+      <select name="digits" id="digits" [(ngModel)]="app.digits">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+    </label>
+  </div>
+  <div>
+    <label><b>Questions:</b>
+      <input type="number" id="questions" name="questions" [(ngModel)]="app.amountOfQuestions" min="5" max="20">
+    </label>
+  </div>
+  <div>
+    <button [disabled]="!app.checkIfAtLeastOneButtonWasClicked() || !settingsForm.form.valid" routerLink="/exercise" (click)="app.createQuestions()">New exercise</button>
+  </div>
+
+</form>
